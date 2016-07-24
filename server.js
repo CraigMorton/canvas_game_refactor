@@ -6,6 +6,16 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
+app.get('/img/background', function (req, res) {
+  res.sendFile(path.join(__dirname + '/client/img/background.png'));
+});
+app.get('/img/hero', function (req, res) {
+  res.sendFile(path.join(__dirname + '/client/img/hero.png'));
+});
+app.get('/img/monster', function (req, res) {
+  res.sendFile(path.join(__dirname + '/client/img/monster.png'));
+});
+
 app.use(express.static('client/build'));
 
 

@@ -1,4 +1,3 @@
-import imageUrls from "../img/imageUrls.js";
 import Sprite from "./sprite.js";
 
 window.onload = function(){
@@ -9,12 +8,13 @@ window.onload = function(){
   canvas.height = 480;
   document.body.appendChild(canvas);
 
+
   // Background image
-  const bgImage = new Sprite(imageUrls.background);
+  const bgImage = new Sprite("img/background");
   // Hero image
-  const heroImage = new Sprite(imageUrls.hero);
+  const heroImage = new Sprite("img/hero");
   // Monster image
-  const monsterImage = new Sprite(imageUrls.monster);
+  const monsterImage = new Sprite("img/monster");
 
   // Game objects
   const hero = {
@@ -104,7 +104,7 @@ window.onload = function(){
   requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 
   // Let's play this game!
-  const then = Date.now();
+  let then = Date.now();
   reset();
   main();
 };
