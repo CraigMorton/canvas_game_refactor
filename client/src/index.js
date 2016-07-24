@@ -1,6 +1,6 @@
 import Sprite from "./sprite.js";
 
-window.onload = function(){
+window.onload = () => {
   // Create the canvas
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
@@ -26,16 +26,16 @@ window.onload = function(){
   // Handle keyboard controls
   const keysDown = {};
 
-  addEventListener("keydown", function (e) {
+  addEventListener("keydown", (e) => {
     keysDown[e.keyCode] = true;
   }, false);
 
-  addEventListener("keyup", function (e) {
+  addEventListener("keyup", (e) => {
     delete keysDown[e.keyCode];
   }, false);
 
   // Reset the game when the player catches a monster
-  const reset = function () {
+  const reset = () => {
     hero.x = canvas.width / 2;
     hero.y = canvas.height / 2;
 
@@ -45,7 +45,7 @@ window.onload = function(){
   };
 
   // Update game objects
-  const update = function (modifier) {
+  const update = (modifier) => {
     if (38 in keysDown) { // Player holding up
       hero.y -= hero.speed * modifier;
     }
@@ -72,7 +72,7 @@ window.onload = function(){
   };
 
   // Draw everything
-  const render = function () {
+  const render = () => {
     ctx.drawImage(bgImage, 0, 0);
     ctx.drawImage(heroImage, hero.x, hero.y);
     ctx.drawImage(monsterImage, monster.x, monster.y);
@@ -86,7 +86,7 @@ window.onload = function(){
   };
 
   // The main game loop
-  const main = function () {
+  const main = () => {
     const now = Date.now();
     const delta = now - then;
 
