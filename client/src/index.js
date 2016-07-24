@@ -11,15 +11,10 @@ window.onload = function(){
 
   // Background image
   const bgImage = new Sprite(imageUrls.background);
-  var bgReady = bgImage.isReady;
-
   // Hero image
   const heroImage = new Sprite(imageUrls.hero);
-  var heroReady = heroImage.isReady;
-
   // Monster image
   const monsterImage = new Sprite(imageUrls.monster);
-  var monsterReady = monsterImage.isReady;
 
   // Game objects
   var hero = {
@@ -78,17 +73,9 @@ window.onload = function(){
 
   // Draw everything
   var render = function () {
-    if (bgReady) {
-      ctx.drawImage(bgImage, 0, 0);
-    }
-
-    if (heroReady) {
-      ctx.drawImage(heroImage, hero.x, hero.y);
-    }
-
-    if (monsterReady) {
-      ctx.drawImage(monsterImage, monster.x, monster.y);
-    }
+    ctx.drawImage(bgImage, 0, 0);
+    ctx.drawImage(heroImage, hero.x, hero.y);
+    ctx.drawImage(monsterImage, monster.x, monster.y);
 
     // Score
     ctx.fillStyle = "rgb(250, 250, 250)";
