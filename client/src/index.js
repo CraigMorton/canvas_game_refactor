@@ -1,12 +1,8 @@
-const HERO_IMAGE_URL = "http://i.imgur.com/nohe7cI.png";
-const MONSTER_IMAGE_URL = "http://i.imgur.com/pC8IuoL.png";
-const BACKGROUND_IMAGE_URL = "http://i.imgur.com/SQizPAr.png";
-
+import imageUrls from "../img/imageUrls.js";
+import Sprite from "./sprite.js";
 
 window.onload = function(){
-
-
-    // Create the canvas
+  // Create the canvas
   var canvas = document.createElement("canvas");
   var ctx = canvas.getContext("2d");
   canvas.width = 512;
@@ -14,28 +10,16 @@ window.onload = function(){
   document.body.appendChild(canvas);
 
   // Background image
-  var bgReady = false;
-  var bgImage = new Image();
-  bgImage.onload = function () {
-    bgReady = true;
-  };
-  bgImage.src = BACKGROUND_IMAGE_URL;
+  const bgImage = new Sprite(imageUrls.background);
+  var bgReady = bgImage.isReady;
 
   // Hero image
-  var heroReady = false;
-  var heroImage = new Image();
-  heroImage.onload = function () {
-    heroReady = true;
-  };
-  heroImage.src = HERO_IMAGE_URL;
+  const heroImage = new Sprite(imageUrls.hero);
+  var heroReady = heroImage.isReady;
 
   // Monster image
-  var monsterReady = false;
-  var monsterImage = new Image();
-  monsterImage.onload = function () {
-    monsterReady = true;
-  };
-  monsterImage.src = MONSTER_IMAGE_URL;
+  const monsterImage = new Sprite(imageUrls.monster);
+  var monsterReady = monsterImage.isReady;
 
   // Game objects
   var hero = {
