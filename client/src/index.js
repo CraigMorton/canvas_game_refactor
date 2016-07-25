@@ -88,13 +88,11 @@ window.onload = () => {
   // The main game loop
   const main = () => {
     const now = Date.now();
-    const delta = now - then;
-
-    update(delta / 1000);
+    const millisecondsSinceUpdate = now - then;
+    const secondsSinceUpdate = millisecondsSinceUpdate / 1000;
+    update(secondsSinceUpdate);
     render();
-
     then = now;
-
     // Request to do this again ASAP
     requestAnimationFrame(main);
   };
