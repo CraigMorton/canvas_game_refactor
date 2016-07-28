@@ -1,4 +1,6 @@
-import Sprite from "./sprite.js";
+import Sprite from "./Sprite.js";
+import Hero from "./Hero.js";
+import Monster from "./Monster.js";
 
 window.onload = () => {
   // Create the canvas
