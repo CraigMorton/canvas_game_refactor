@@ -45,18 +45,18 @@ window.onload = () => {
   };
 
   // Update game objects
-  const update = (modifier) => {
+  const update = (secondsSinceUpdate) => {
     if (38 in keysDown) { // Player holding up
-      hero.y -= hero.speed * modifier;
+      hero.y -= hero.speed * secondsSinceUpdate;
     }
     if (40 in keysDown) { // Player holding down
-      hero.y += hero.speed * modifier;
+      hero.y += hero.speed * secondsSinceUpdate;
     }
     if (37 in keysDown) { // Player holding left
-      hero.x -= hero.speed * modifier;
+      hero.x -= hero.speed * secondsSinceUpdate;
     }
     if (39 in keysDown) { // Player holding right
-      hero.x += hero.speed * modifier;
+      hero.x += hero.speed * secondsSinceUpdate;
     }
 
     // Are they touching?
