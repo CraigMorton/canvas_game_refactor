@@ -1,5 +1,5 @@
 {
-  "name": "es2015_webpack_setup",
+  "name": "canvas_game_refactor",
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
